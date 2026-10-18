@@ -5,93 +5,103 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>فني كهرباء سباكة - خدمات منزلية احترافية</title>
 <style>
-  /* إعدادات عامة */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.8; color: #333; background-color: #F8F9FA; }
+  /* إعدادات عامة ولوحة الألوان */
+  :root {
+    --primary: #0F3447; /* الأزرق الداكن */
+    --secondary: #1A7D7F; /* التيل */
+    --accent: #E9ECEF; /* الرمادي الفاتح */
+    --bg: #F8F9FA;
+    --text: #333333;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+  body { line-height: 1.8; color: var(--text); background-color: var(--bg); }
   
-  .page { display: none; }
+  /* إخفاء وإظهار الصفحات */
+  .page { display: none; animation: fadeIn 0.4s ease-in-out; }
   .page.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
   /* الهيدر الرئيسي */
-  .main-header { background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: #333; text-align: center; padding: 60px 20px; border-bottom: 4px solid #1A7D7F; }
+  .main-header { background: linear-gradient(rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.96)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; text-align: center; padding: 70px 20px; border-bottom: 5px solid var(--secondary); }
   
-  /* تنسيق الشعار */
-  .logo-container { margin-bottom: 25px; }
-  .logo-container img { max-width: 180px; height: auto; filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.15)); }
+  /* الشعار */
+  .logo-container { margin-bottom: 20px; }
+  .logo-container img { max-width: 160px; height: auto; filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.15)); border-radius: 10px; }
 
-  .main-header h1 { font-size: 2.5rem; margin-bottom: 15px; color: #0F3447; font-weight: 800; }
+  .main-header h1 { font-size: 2.8rem; margin-bottom: 15px; color: var(--primary); font-weight: 800; }
   .main-header p { font-size: 1.2rem; color: #555; margin-bottom: 30px; font-weight: 600; }
 
   /* الأزرار */
   .cta-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: 0.3s; cursor: pointer; border: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: 0.3s; border: none; cursor: pointer; }
   .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
   .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-3px); }
-  .btn-call { background: #0F3447; color: white; box-shadow: 0 4px 15px rgba(15,52,71,0.3); }
+  .btn-call { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(15,52,71,0.3); }
   .btn-call:hover { background: #081c27; transform: translateY(-3px); }
 
   /* الشريط السفلي الثابت */
   .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); display: flex; z-index: 100; }
-  .sticky-bar a { flex: 1; text-align: center; padding: 15px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s; }
-  .sticky-bar .call { background: #0F3447; color: white; }
+  .sticky-bar a { flex: 1; text-align: center; padding: 15px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px;}
+  .sticky-bar .call { background: var(--primary); color: white; }
   .sticky-bar .wa { background: #25D366; color: white; }
 
   /* الأقسام */
-  section { max-width: 1000px; margin: 40px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-  section h2 { color: #0F3447; margin-bottom: 30px; border-right: 5px solid #1A7D7F; padding-right: 15px; font-size: 1.8rem; font-weight: bold; }
+  section { max-width: 1100px; margin: 40px auto; padding: 35px; background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); }
+  section h2 { color: var(--primary); margin-bottom: 30px; border-right: 6px solid var(--secondary); padding-right: 15px; font-size: 1.8rem; font-weight: bold; }
 
   /* شبكة الخدمات */
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-  .service-card { border: 2px solid #E9ECEF; border-radius: 15px; padding: 30px; text-align: center; transition: 0.3s; background: #ffffff; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-  .service-card:hover { border-color: #1A7D7F; transform: translateY(-8px); box-shadow: 0 10px 25px rgba(26,125,127,0.15); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+  .service-card { border: 2px solid var(--accent); border-radius: 15px; padding: 35px 25px; text-align: center; transition: 0.4s; background: #ffffff; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+  .service-card:hover { border-color: var(--secondary); transform: translateY(-8px); box-shadow: 0 15px 30px rgba(26,125,127,0.15); }
   .service-icon { font-size: 3.5rem; margin-bottom: 15px; }
-  .service-card h3 { color: #0F3447; margin-bottom: 12px; font-size: 1.3rem; font-weight: bold; }
+  .service-card h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.4rem; font-weight: bold; }
   .service-card p { font-size: 1rem; color: #666; }
 
   /* معرض الصور */
-  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-  .gallery-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s; border: 1px solid #eee; }
-  .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-  .gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: 0.5s; display: block; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+  .gallery-item { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; border: 1px solid var(--accent); }
+  .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+  .gallery-item img { width: 100%; height: 240px; object-fit: cover; transition: 0.5s; display: block; }
   .gallery-item:hover img { transform: scale(1.05); }
-  .gallery-item p { padding: 15px; font-weight: bold; color: #1A7D7F; text-align: center; background: #F8F9FA; margin: 0; border-top: 1px solid #eee; }
+  .gallery-item p { padding: 15px; font-weight: bold; color: var(--secondary); text-align: center; background: #F8F9FA; margin: 0; border-top: 1px solid var(--accent); }
 
   /* الصفحات الداخلية */
-  .inner-header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-  .inner-header img { height: 50px; width: auto; }
-  .back-btn { color: #0F3447; text-decoration: none; font-weight: bold; font-size: 1rem; cursor: pointer; display: flex; align-items: center; gap: 5px; background: #E9ECEF; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
+  .inner-header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--accent); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .inner-header img { height: 60px; width: auto; border-radius: 8px; }
+  .back-btn { color: var(--primary); text-decoration: none; font-weight: bold; font-size: 1rem; cursor: pointer; display: flex; align-items: center; gap: 8px; background: var(--accent); padding: 10px 20px; border-radius: 8px; transition: 0.3s; }
   .back-btn:hover { background: #d0dce5; }
   
   /* الهيرو الداخلي */
-  .hero { text-align: center; padding: 100px 20px; background-size: cover; background-position: center; border-bottom: 4px solid #1A7D7F; position: relative; }
-  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 52, 71, 0.75); z-index: 1; } /* لون داكن من لوحة الألوان لإبراز النص */
-  .hero h1, .hero p { position: relative; z-index: 2; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-  .hero h1 { color: #ffffff; font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
-  .hero p { font-size: 1.2rem; color: #e0e0e0; font-weight: 600; }
+  .hero { text-align: center; padding: 120px 20px; background-size: cover; background-position: center; border-bottom: 5px solid var(--secondary); position: relative; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 52, 71, 0.75); z-index: 1; } 
+  .hero h1, .hero p { position: relative; z-index: 2; text-shadow: 2px 2px 5px rgba(0,0,0,0.6); }
+  .hero h1 { color: #ffffff; font-size: 3rem; margin-bottom: 15px; font-weight: 800; }
+  .hero p { font-size: 1.3rem; color: #f0f0f0; font-weight: 600; }
 
-  .content { max-width: 850px; margin: -40px auto 40px; padding: 40px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; z-index: 5; }
-  .content h2 { color: #0F3447; margin-bottom: 20px; border-right: 4px solid #1A7D7F; padding-right: 10px; font-size: 1.5rem; }
-  .content p { margin-bottom: 15px; font-size: 1.1rem; color: #444; }
-  .features-list { list-style: none; margin: 25px 0; }
-  .features-list li { margin-bottom: 12px; font-size: 1.1rem; color: #333; display: flex; align-items: center; }
-  .features-list li::before { content: "✔️"; color: #1A7D7F; margin-left: 12px; font-size: 1.2rem; }
+  .content { max-width: 900px; margin: -50px auto 50px; padding: 45px; background: white; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); position: relative; z-index: 5; }
+  .content h2 { color: var(--primary); margin-bottom: 25px; border-right: 5px solid var(--secondary); padding-right: 15px; font-size: 1.6rem; }
+  .content p { margin-bottom: 20px; font-size: 1.15rem; color: #444; }
+  .features-list { list-style: none; margin: 30px 0; }
+  .features-list li { margin-bottom: 15px; font-size: 1.15rem; color: var(--text); display: flex; align-items: center; }
+  .features-list li::before { content: "✔"; color: var(--secondary); margin-left: 15px; font-size: 1.4rem; font-weight: bold; }
 
-  .btn-request { display: block; text-align: center; background: #1A7D7F; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.2rem; margin-top: 35px; box-shadow: 0 4px 15px rgba(26,125,127,0.3); transition: 0.3s; }
-  .btn-request:hover { background: #146466; transform: translateY(-2px); }
+  .btn-request { display: block; text-align: center; background: var(--secondary); color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.25rem; margin-top: 40px; box-shadow: 0 6px 20px rgba(26,125,127,0.3); transition: 0.3s; }
+  .btn-request:hover { background: #146466; transform: translateY(-3px); }
 
   /* صندوق التواصل */
-  .contact-box { text-align: center; background: #F8F9FA; border: 2px solid #0F3447; border-radius: 15px; padding: 50px 20px; }
-  .contact-box h2 { color: #0F3447; border: none; padding: 0; margin-bottom: 15px; font-size: 1.8rem; }
+  .contact-box { text-align: center; background: var(--bg); border: 3px solid var(--primary); border-radius: 15px; padding: 60px 20px; }
+  .contact-box h2 { color: var(--primary); border: none; padding: 0; margin-bottom: 15px; font-size: 2rem; }
   .contact-box p { margin-bottom: 25px; font-size: 1.2rem; color: #555; }
-  .phone-big { font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; margin: 20px 0; direction: ltr; display: block; color: #1A7D7F; }
+  .phone-big { font-size: 2.8rem; font-weight: 900; letter-spacing: 2px; margin: 20px 0; direction: ltr; display: block; color: var(--secondary); }
 
-  footer { text-align: center; padding: 40px 20px 100px; color: #888; font-size: 1rem; border-top: 1px solid #eee; margin-top: 40px; }
+  footer { text-align: center; padding: 40px 20px 100px; color: #888; font-size: 1rem; border-top: 1px solid var(--accent); margin-top: 40px; }
   
   @media (max-width: 600px) { 
-    .main-header h1 { font-size: 2rem; } 
+    .main-header h1 { font-size: 2.2rem; } 
     section, .content { margin: 20px 15px; padding: 25px; } 
-    .hero h1 { font-size: 2rem; } 
-    .phone-big { font-size: 2rem; }
+    .hero h1 { font-size: 2.2rem; } 
+    .phone-big { font-size: 2.2rem; }
+    .inner-header img { height: 45px; }
   }
 </style>
 </head>
@@ -101,7 +111,7 @@
 <div id="main-page" class="page active">
   <header class="main-header">
     <div class="logo-container">
-      <!-- تم استخدام رابط مؤقت للشعار، يمكنك استبداله لاحقاً بصورة شعارك المرفوعة -->
+      <!-- استبدل هذا الرابط برابط شعارك بعد رفعه -->
       <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار تركيبة احترافي">
     </div>
     <h1>فني كهرباء سباكة</h1>
@@ -149,7 +159,7 @@
 <!-- ================= صفحة الكهرباء ================= -->
 <div id="electric" class="page">
   <div class="inner-header">
-    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <a onclick="closePage()" class="back-btn">← العودة للرئيسية</a>
     <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
   </div>
   <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1920&q=80');"><h1>أعمال الكهرباء</h1><p>حلول كهربائية شاملة وآمنة لمنزلك</p></div>
@@ -162,14 +172,14 @@
       <li>كشف أعطال الكهرباء وإصلاحها فوراً.</li>
       <li>تركيب الإنارة والمقابس بأمان.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الكهرباء" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الكهرباء" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
   </div>
 </div>
 
 <!-- ================= صفحة السباكة ================= -->
 <div id="plumbing" class="page">
   <div class="inner-header">
-    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <a onclick="closePage()" class="back-btn">← العودة للرئيسية</a>
     <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
   </div>
   <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1920&q=80');"><h1>أعمال السباكة</h1><p>حلول سباكة احترافية وكشف تسربات</p></div>
@@ -182,14 +192,14 @@
       <li>تسليك المجاري والمواسير باحترافية.</li>
       <li>تمديدات سباكة كاملة للمباني الجديدة.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20السباكة" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20السباكة" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
   </div>
 </div>
 
 <!-- ================= صفحة الإنتركم ================= -->
 <div id="intercom" class="page">
   <div class="inner-header">
-    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <a onclick="closePage()" class="back-btn">← العودة للرئيسية</a>
     <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
   </div>
   <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1920&q=80');"><h1>أنظمة الإنتركم</h1><p>أحدث أجهزة الإنتركم لحماية منزلك</p></div>
@@ -202,14 +212,14 @@
       <li>صيانة وإصلاح جميع الأعطال بسرعة.</li>
       <li>توفير أجهزة أصلية بضمان.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الإنتركم" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الإنتركم" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
   </div>
 </div>
 
 <!-- ================= صفحة التراك لايت ================= -->
 <div id="track-light" class="page">
   <div class="inner-header">
-    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <a onclick="closePage()" class="back-btn">← العودة للرئيسية</a>
     <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
   </div>
   <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=80');"><h1>تركيب تراك لايت</h1><p>أحدث تصاميم الإضاءة المودرن لمنزلك</p></div>
@@ -222,14 +232,14 @@
       <li>تركيب احترافي ونظيف.</li>
       <li>إمكانية التحكم بالإضاءة عبر الريموت.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تراك%20لايت" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تراك%20لايت" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
   </div>
 </div>
 
 <!-- ================= صفحة المجنتك ================= -->
 <div id="magnetic" class="page">
   <div class="inner-header">
-    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <a onclick="closePage()" class="back-btn">← العودة للرئيسية</a>
     <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
   </div>
   <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=1920&q=80');"><h1>تركيب مجنتك</h1><p>أنظمة التعليق المغناطيسية الحديثة</p></div>
@@ -242,14 +252,14 @@
       <li>تصاميم عصرية تناسب الديكورات الحديثة.</li>
       <li>توفير حلول إضاءة متكاملة.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20المجنتك" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20المجنتك" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
   </div>
 </div>
 
 <!-- ================= صفحة الثريات ================= -->
 <div id="chandeliers" class="page">
   <div class="inner-header">
-    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <a onclick="closePage()" class="back-btn">← العودة للرئيسية</a>
     <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
   </div>
   <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1920&q=80');"><h1>ثريات مودرن احترافية</h1><p>لمسة فخامة وإضاءة ساحرة لمجلسك</p></div>
@@ -262,7 +272,7 @@
       <li>توصيلات كهربائية دقيقة وآمنة.</li>
       <li>إمكانية اختيار تصاميم مخصصة حسب الطلب.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تركيب%20ثريات" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تركيب%20ثريات" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
   </div>
 </div>
 
