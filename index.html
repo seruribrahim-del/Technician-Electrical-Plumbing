@@ -5,78 +5,94 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>فني كهرباء سباكة - خدمات منزلية احترافية</title>
 <style>
+  /* إعدادات عامة */
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.8; color: #e0e0e0; background-color: #121212; }
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.8; color: #333; background-color: #F8F9FA; }
   
-  /* إخفاء الصفحات افتراضياً */
   .page { display: none; }
   .page.active { display: block; }
 
-  /* تصميم الهيدر الرئيسي */
-  .main-header { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: white; text-align: center; padding: 80px 20px; border-bottom: 3px solid #d4af37; }
-  .main-header h1 { font-size: 2.5rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); color: #fff; }
-  .main-header p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+  /* الهيدر الرئيسي */
+  .main-header { background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: #333; text-align: center; padding: 60px 20px; border-bottom: 4px solid #1A7D7F; }
+  
+  /* تنسيق الشعار */
+  .logo-container { margin-bottom: 25px; }
+  .logo-container img { max-width: 180px; height: auto; filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.15)); }
 
-  /* أزرار التواصل */
+  .main-header h1 { font-size: 2.5rem; margin-bottom: 15px; color: #0F3447; font-weight: 800; }
+  .main-header p { font-size: 1.2rem; color: #555; margin-bottom: 30px; font-weight: 600; }
+
+  /* الأزرار */
   .cta-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.05rem; transition: 0.3s; cursor: pointer; border: none; }
-  .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-  .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
-  .btn-call { background: #d4af37; color: #121212; }
-  .btn-call:hover { background: #f1c40f; transform: translateY(-2px); }
+  .btn-whatsapp { background: #25D366; color: white; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+  .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-3px); }
+  .btn-call { background: #0F3447; color: white; box-shadow: 0 4px 15px rgba(15,52,71,0.3); }
+  .btn-call:hover { background: #081c27; transform: translateY(-3px); }
 
   /* الشريط السفلي الثابت */
-  .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; box-shadow: 0 -2px 10px rgba(0,0,0,0.5); display: flex; z-index: 100; }
-  .sticky-bar a { flex: 1; text-align: center; padding: 15px; text-decoration: none; font-weight: 700; font-size: 1rem; }
-  .sticky-bar .call { background: #d4af37; color: #121212; }
+  .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; box-shadow: 0 -4px 15px rgba(0,0,0,0.1); display: flex; z-index: 100; }
+  .sticky-bar a { flex: 1; text-align: center; padding: 15px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.3s; }
+  .sticky-bar .call { background: #0F3447; color: white; }
   .sticky-bar .wa { background: #25D366; color: white; }
 
-  /* تصميم الأقسام */
-  section { max-width: 900px; margin: 40px auto; padding: 30px; background: #1e1e1e; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #333; }
-  section h2 { color: #d4af37; margin-bottom: 25px; border-right: 5px solid #d4af37; padding-right: 12px; font-size: 1.6rem; }
+  /* الأقسام */
+  section { max-width: 1000px; margin: 40px auto; padding: 30px; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+  section h2 { color: #0F3447; margin-bottom: 30px; border-right: 5px solid #1A7D7F; padding-right: 15px; font-size: 1.8rem; font-weight: bold; }
 
   /* شبكة الخدمات */
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-  .service-card { border: 1px solid #333; border-radius: 12px; padding: 25px; text-align: center; transition: 0.3s; background: #252525; cursor: pointer; }
-  .service-card:hover { border-color: #d4af37; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2); }
-  .service-icon { font-size: 2.8rem; margin-bottom: 12px; }
-  .service-card h3 { color: #fff; margin-bottom: 10px; font-size: 1.15rem; }
-  .service-card p { font-size: 0.95rem; color: #b0b0b0; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+  .service-card { border: 2px solid #E9ECEF; border-radius: 15px; padding: 30px; text-align: center; transition: 0.3s; background: #ffffff; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+  .service-card:hover { border-color: #1A7D7F; transform: translateY(-8px); box-shadow: 0 10px 25px rgba(26,125,127,0.15); }
+  .service-icon { font-size: 3.5rem; margin-bottom: 15px; }
+  .service-card h3 { color: #0F3447; margin-bottom: 12px; font-size: 1.3rem; font-weight: bold; }
+  .service-card p { font-size: 1rem; color: #666; }
 
   /* معرض الصور */
-  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-  .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid #333; transition: 0.3s; }
-  .gallery img:hover { border-color: #d4af37; transform: scale(1.03); }
-  .gallery-item { text-align: center; }
-  .gallery-item p { margin-top: 8px; font-weight: bold; color: #d4af37; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .gallery-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: 0.3s; border: 1px solid #eee; }
+  .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+  .gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: 0.5s; display: block; }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-item p { padding: 15px; font-weight: bold; color: #1A7D7F; text-align: center; background: #F8F9FA; margin: 0; border-top: 1px solid #eee; }
 
-  /* تصميم الصفحات الداخلية */
-  .inner-header { background: #1a1a1a; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d4af37; }
-  .back-btn { color: #d4af37; text-decoration: none; font-weight: bold; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+  /* الصفحات الداخلية */
+  .inner-header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .inner-header img { height: 50px; width: auto; }
+  .back-btn { color: #0F3447; text-decoration: none; font-weight: bold; font-size: 1rem; cursor: pointer; display: flex; align-items: center; gap: 5px; background: #E9ECEF; padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
+  .back-btn:hover { background: #d0dce5; }
   
-  .hero { text-align: center; padding: 60px 20px; background-size: cover; background-position: center; border-bottom: 3px solid #d4af37; }
-  .hero h1 { color: #d4af37; font-size: 2.5rem; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
-  .hero p { font-size: 1.2rem; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+  /* الهيرو الداخلي */
+  .hero { text-align: center; padding: 100px 20px; background-size: cover; background-position: center; border-bottom: 4px solid #1A7D7F; position: relative; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 52, 71, 0.75); z-index: 1; } /* لون داكن من لوحة الألوان لإبراز النص */
+  .hero h1, .hero p { position: relative; z-index: 2; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+  .hero h1 { color: #ffffff; font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
+  .hero p { font-size: 1.2rem; color: #e0e0e0; font-weight: 600; }
 
-  .content { max-width: 800px; margin: 40px auto; padding: 30px; background: #1e1e1e; border-radius: 12px; border: 1px solid #333; }
-  .content h2 { color: #d4af37; margin-bottom: 20px; border-right: 4px solid #d4af37; padding-right: 10px; }
-  .content p { margin-bottom: 15px; font-size: 1.05rem; }
-  .features-list { list-style: none; margin: 20px 0; }
-  .features-list li { margin-bottom: 10px; font-size: 1.1rem; }
-  .features-list li::before { content: "✔️"; color: #25D366; margin-left: 10px; }
+  .content { max-width: 850px; margin: -40px auto 40px; padding: 40px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; z-index: 5; }
+  .content h2 { color: #0F3447; margin-bottom: 20px; border-right: 4px solid #1A7D7F; padding-right: 10px; font-size: 1.5rem; }
+  .content p { margin-bottom: 15px; font-size: 1.1rem; color: #444; }
+  .features-list { list-style: none; margin: 25px 0; }
+  .features-list li { margin-bottom: 12px; font-size: 1.1rem; color: #333; display: flex; align-items: center; }
+  .features-list li::before { content: "✔️"; color: #1A7D7F; margin-left: 12px; font-size: 1.2rem; }
 
-  /* زر واتساب للصفحات الداخلية */
-  .btn-request { display: block; text-align: center; background: #25D366; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; margin-top: 30px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-  .btn-request:hover { background: #1ebe5d; }
+  .btn-request { display: block; text-align: center; background: #1A7D7F; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 1.2rem; margin-top: 35px; box-shadow: 0 4px 15px rgba(26,125,127,0.3); transition: 0.3s; }
+  .btn-request:hover { background: #146466; transform: translateY(-2px); }
 
   /* صندوق التواصل */
-  .contact-box { text-align: center; background: linear-gradient(135deg, #1a1a1a, #2a2a2a); border: 2px solid #d4af37; border-radius: 12px; padding: 40px 20px; }
-  .contact-box h2 { color: #d4af37; border: none; padding: 0; margin-bottom: 15px;}
-  .contact-box p { margin-bottom: 20px; font-size: 1.1rem; color: #e0e0e0; }
-  .phone-big { font-size: 2rem; font-weight: 800; letter-spacing: 1px; margin: 15px 0; direction: ltr; display: block; color: #d4af37; }
+  .contact-box { text-align: center; background: #F8F9FA; border: 2px solid #0F3447; border-radius: 15px; padding: 50px 20px; }
+  .contact-box h2 { color: #0F3447; border: none; padding: 0; margin-bottom: 15px; font-size: 1.8rem; }
+  .contact-box p { margin-bottom: 25px; font-size: 1.2rem; color: #555; }
+  .phone-big { font-size: 2.5rem; font-weight: 900; letter-spacing: 2px; margin: 20px 0; direction: ltr; display: block; color: #1A7D7F; }
 
-  footer { text-align: center; padding: 30px 20px 90px; color: #888; font-size: 0.9rem; }
-  @media (max-width: 600px) { .main-header h1 { font-size: 1.8rem; } section, .content { margin: 20px 12px; padding: 22px; } .hero h1 { font-size: 1.8rem; } }
+  footer { text-align: center; padding: 40px 20px 100px; color: #888; font-size: 1rem; border-top: 1px solid #eee; margin-top: 40px; }
+  
+  @media (max-width: 600px) { 
+    .main-header h1 { font-size: 2rem; } 
+    section, .content { margin: 20px 15px; padding: 25px; } 
+    .hero h1 { font-size: 2rem; } 
+    .phone-big { font-size: 2rem; }
+  }
 </style>
 </head>
 <body>
@@ -84,6 +100,10 @@
 <!-- ================= الصفحة الرئيسية ================= -->
 <div id="main-page" class="page active">
   <header class="main-header">
+    <div class="logo-container">
+      <!-- تم استخدام رابط مؤقت للشعار، يمكنك استبداله لاحقاً بصورة شعارك المرفوعة -->
+      <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار تركيبة احترافي">
+    </div>
     <h1>فني كهرباء سباكة</h1>
     <p>خدمات كهرباء وسباكة احترافية — تركيب وصيانة بأعلى جودة</p>
     <div class="cta-buttons">
@@ -93,29 +113,30 @@
   </header>
 
   <section>
-    <h2>خدماتنا (اضغط على أي خدمة للتفاصيل)</h2>
+    <h2>خدماتنا الاحترافية</h2>
     <div class="services-grid">
-      <div class="service-card" onclick="openPage('electric')"><div class="service-icon">⚡</div><h3>أعمال الكهرباء</h3><p>تركيب وصيانة جميع الأعمال الكهربائية.</p></div>
-      <div class="service-card" onclick="openPage('plumbing')"><div class="service-icon">🚰</div><h3>أعمال السباكة</h3><p>تركيب وصيانة الأدوات الصحية وكشف التسربات.</p></div>
-      <div class="service-card" onclick="openPage('intercom')"><div class="service-icon">📹</div><h3>أنظمة الإنتركم</h3><p>تركيب أجهزة الإنتركوم السمعية والمرئية.</p></div>
-      <div class="service-card" onclick="openPage('track-light')"><div class="service-icon">💡</div><h3>تراك لايت</h3><p>تصميم إضاءة التراك لايت الحديثة.</p></div>
+      <div class="service-card" onclick="openPage('electric')"><div class="service-icon">⚡</div><h3>أعمال الكهرباء</h3><p>تركيب وصيانة جميع الأعمال الكهربائية بأمان تام.</p></div>
+      <div class="service-card" onclick="openPage('plumbing')"><div class="service-icon">🚰</div><h3>أعمال السباكة</h3><p>تركيب الأدوات الصحية وكشف تسربات المياه.</p></div>
+      <div class="service-card" onclick="openPage('intercom')"><div class="service-icon">📹</div><h3>أنظمة الإنتركم</h3><p>أحدث أجهزة الإنتركوم السمعية والمرئية.</p></div>
+      <div class="service-card" onclick="openPage('track-light')"><div class="service-icon">💡</div><h3>تراك لايت</h3><p>تصميم وتركيب إضاءة تراك لايت مودرن.</p></div>
       <div class="service-card" onclick="openPage('magnetic')"><div class="service-icon">🧲</div><h3>مجنتك</h3><p>تركيب أنظمة التعليق المغناطيسية للإنارة.</p></div>
-      <div class="service-card" onclick="openPage('chandeliers')"><div class="service-icon">✨</div><h3>ثريات مودرن</h3><p>توريد وتركيب أحدث الثريات العصرية.</p></div>
+      <div class="service-card" onclick="openPage('chandeliers')"><div class="service-icon">✨</div><h3>ثريات مودرن</h3><p>توريد وتركيب أرقى الثريات العصرية.</p></div>
     </div>
   </section>
 
   <section>
     <h2>معرض أعمالنا</h2>
     <div class="gallery">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="أنتركوم"><p>تركيب أنتركوم</p></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="تراك لايت"><p>تراك لايت مودرن</p></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مجنتك"><p>إنارة مجنتك</p></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ثريا مودرن"><p>ثريات مودرن</p></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80" alt="أنتركوم"><p>تركيب أنتركوم حديث</p></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="إضاءة داخلية"><p>إضاءة مخفية ومودرن</p></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=600&q=80" alt="تراك لايت"><p>تركيب تراك لايت فاخر</p></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=600&q=80" alt="ثريا"><p>ثريات مودرن أنيقة</p></div>
     </div>
   </section>
 
   <section class="contact-box">
     <h2>تواصل معنا الآن</h2>
+    <p>نحن في خدمتك على مدار الساعة</p>
     <span class="phone-big">0558815095</span>
     <div class="cta-buttons" style="margin-top:20px;">
       <a class="btn btn-whatsapp" href="https://wa.me/966558815095?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدماتكم" target="_blank">💬 واتساب</a>
@@ -127,8 +148,11 @@
 
 <!-- ================= صفحة الكهرباء ================= -->
 <div id="electric" class="page">
-  <div class="inner-header"><a onclick="closePage()" class="back-btn">← العودة للرئيسية</a><span style="color:#fff; font-weight:bold;">فني كهرباء سباكة</span></div>
-  <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=80');"><h1>أعمال الكهرباء</h1><p>حلول كهربائية شاملة وآمنة لمنزلك</p></div>
+  <div class="inner-header">
+    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
+  </div>
+  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1920&q=80');"><h1>أعمال الكهرباء</h1><p>حلول كهربائية شاملة وآمنة لمنزلك</p></div>
   <div class="content">
     <h2>مميزات خدمة الكهرباء</h2>
     <p>نقدم تركيباً وصيانة لجميع الأعمال الكهربائية بأعلى معايير الأمان والجودة.</p>
@@ -138,92 +162,107 @@
       <li>كشف أعطال الكهرباء وإصلاحها فوراً.</li>
       <li>تركيب الإنارة والمقابس بأمان.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الكهرباء" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الكهرباء" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
   </div>
 </div>
 
 <!-- ================= صفحة السباكة ================= -->
 <div id="plumbing" class="page">
-  <div class="inner-header"><a onclick="closePage()" class="back-btn">← العودة للرئيسية</a><span style="color:#fff; font-weight:bold;">فني كهرباء سباكة</span></div>
-  <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1920&q=80');"><h1>أعمال السباكة</h1><p>حلول سباكة احترافية وكشف تسربات بأحدث الأجهزة</p></div>
+  <div class="inner-header">
+    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
+  </div>
+  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1920&q=80');"><h1>أعمال السباكة</h1><p>حلول سباكة احترافية وكشف تسربات</p></div>
   <div class="content">
     <h2>مميزات خدمة السباكة</h2>
-    <p>نقدم خدمات سباكة متكاملة تشمل التركيب والصيانة وحل جميع مشاكل المياه في منزلك.</p>
+    <p>نقدم خدمات سباكة متكاملة تشمل التركيب والصيانة وحل جميع مشاكل المياه.</p>
     <ul class="features-list">
-      <li>كشف تسربات المياه بدون تكسير باستخدام أجهزة حديثة.</li>
-      <li>تركيب وصيانة جميع الأدوات الصحية (خلاطات، مراحيض، سخانات).</li>
+      <li>كشف تسربات المياه بدون تكسير.</li>
+      <li>تركيب وصيانة جميع الأدوات الصحية.</li>
       <li>تسليك المجاري والمواسير باحترافية.</li>
       <li>تمديدات سباكة كاملة للمباني الجديدة.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20السباكة" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20السباكة" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
   </div>
 </div>
 
 <!-- ================= صفحة الإنتركم ================= -->
 <div id="intercom" class="page">
-  <div class="inner-header"><a onclick="closePage()" class="back-btn">← العودة للرئيسية</a><span style="color:#fff; font-weight:bold;">فني كهرباء سباكة</span></div>
-  <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1920&q=80');"><h1>أنظمة الإنتركم</h1><p>أحدث أجهزة الإنتركم المرئي والصوتي لحماية منزلك</p></div>
+  <div class="inner-header">
+    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
+  </div>
+  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1920&q=80');"><h1>أنظمة الإنتركم</h1><p>أحدث أجهزة الإنتركم لحماية منزلك</p></div>
   <div class="content">
     <h2>مميزات خدمة الإنتركم</h2>
-    <p>نوفر أحدث أنظمة الإنتركم التي تتيح لك رؤية والتحدث مع زوارك قبل فتح الباب بأمان تام.</p>
+    <p>نوفر أحدث أنظمة الإنتركم التي تتيح لك رؤية والتحدث مع زوارك بأمان.</p>
     <ul class="features-list">
       <li>تركيب إنتركم صوتي ومرئي بأعلى جودة.</li>
-      <li>ربط الإنتركم مع تطبيق الجوال لفتح الباب عن بُعد.</li>
+      <li>ربط الإنتركم مع تطبيق الجوال.</li>
       <li>صيانة وإصلاح جميع الأعطال بسرعة.</li>
       <li>توفير أجهزة أصلية بضمان.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الإنتركم" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20الإنتركم" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
   </div>
 </div>
 
 <!-- ================= صفحة التراك لايت ================= -->
 <div id="track-light" class="page">
-  <div class="inner-header"><a onclick="closePage()" class="back-btn">← العودة للرئيسية</a><span style="color:#fff; font-weight:bold;">فني كهرباء سباكة</span></div>
-  <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=1920&q=80');"><h1>تركيب تراك لايت</h1><p>أحدث تصاميم الإضاءة المخفية والمودرن لمنزلك</p></div>
+  <div class="inner-header">
+    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
+  </div>
+  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=80');"><h1>تركيب تراك لايت</h1><p>أحدث تصاميم الإضاءة المودرن لمنزلك</p></div>
   <div class="content">
     <h2>مميزات خدمة التراك لايت</h2>
-    <p>نقدم لك خدمة تركيب وتصميم التراك لايت بأعلى معايير الجودة، لتمنح منزلك إضاءة عصرية ومريحة للعين.</p>
+    <p>نقدم لك خدمة تركيب وتصميم التراك لايت بأعلى معايير الجودة.</p>
     <ul class="features-list">
       <li>تصميم إضاءة مخصص يناسب ديكور منزلك.</li>
-      <li>استخدام شرائط LED أصلية عالية الجودة.</li>
+      <li>استخدام شرائط LED أصلية وموفرة للطاقة.</li>
       <li>تركيب احترافي ونظيف.</li>
-      <li>إمكانية التحكم بالإضاءة عبر الريموت أو الجوال.</li>
+      <li>إمكانية التحكم بالإضاءة عبر الريموت.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تراك%20لايت" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تراك%20لايت" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
   </div>
 </div>
 
 <!-- ================= صفحة المجنتك ================= -->
 <div id="magnetic" class="page">
-  <div class="inner-header"><a onclick="closePage()" class="back-btn">← العودة للرئيسية</a><span style="color:#fff; font-weight:bold;">فني كهرباء سباكة</span></div>
-  <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1920&q=80');"><h1>تركيب مجنتك</h1><p>أنظمة التعليق المغناطيسية الحديثة للإنارة</p></div>
+  <div class="inner-header">
+    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
+  </div>
+  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=1920&q=80');"><h1>تركيب مجنتك</h1><p>أنظمة التعليق المغناطيسية الحديثة</p></div>
   <div class="content">
     <h2>مميزات خدمة المجنتك</h2>
-    <p>نقدم تركيب أنظمة الإنارة المغناطيسية التي تمنحك مرونة في توزيع وتحريك الإضاءة بسهولة.</p>
+    <p>نقدم تركيب أنظمة الإنارة المغناطيسية التي تمنحك مرونة في التوزيع.</p>
     <ul class="features-list">
       <li>تركيب مجاري مغناطيسية عالية الجودة.</li>
       <li>إمكانية تغيير أماكن الإنارة بسهولة.</li>
       <li>تصاميم عصرية تناسب الديكورات الحديثة.</li>
       <li>توفير حلول إضاءة متكاملة.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20المجنتك" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20المجنتك" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
   </div>
 </div>
 
 <!-- ================= صفحة الثريات ================= -->
 <div id="chandeliers" class="page">
-  <div class="inner-header"><a onclick="closePage()" class="back-btn">← العودة للرئيسية</a><span style="color:#fff; font-weight:bold;">فني كهرباء سباكة</span></div>
-  <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1920&q=80');"><h1>ثريات مودرن احترافية</h1><p>لمسة فخامة وإضاءة ساحرة لمجلسك ومنزلك</p></div>
+  <div class="inner-header">
+    <a onclick="closePage()" class="back-btn">← العودة</a>
+    <img src="https://i.postimg.cc/85Q00z7K/logo.jpg" alt="شعار">
+  </div>
+  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=1920&q=80');"><h1>ثريات مودرن احترافية</h1><p>لمسة فخامة وإضاءة ساحرة لمجلسك</p></div>
   <div class="content">
     <h2>مميزات خدمة الثريات</h2>
-    <p>نوفر ونركب أحدث موديلات الثريات العصرية التي تناسب جميع الأذواق والديكورات.</p>
+    <p>نوفر ونركب أحدث موديلات الثريات العصرية التي تناسب جميع الأذواق.</p>
     <ul class="features-list">
       <li>تشكيلة واسعة من الثريات المودرن والكلاسيكية.</li>
       <li>تركيب آمن واحترافي مع تثبيت قوي.</li>
       <li>توصيلات كهربائية دقيقة وآمنة.</li>
       <li>إمكانية اختيار تصاميم مخصصة حسب الطلب.</li>
     </ul>
-    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تركيب%20ثريات" target="_blank" class="btn-request">💬 اطلب الخدمة الآن عبر واتساب</a>
+    <a href="https://wa.me/966558815095?text=مرحباً،%20أريد%20طلب%20خدمة%20تركيب%20ثريات" target="_blank" class="btn-request">💬 اطلب الخدمة الآن</a>
   </div>
 </div>
 
@@ -233,19 +272,14 @@
   <a class="wa" href="https://wa.me/966558815095?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدماتكم" target="_blank">💬 واتساب</a>
 </div>
 
-<!-- ================= كود التبديل بين الصفحات ================= -->
+<!-- ================= كود التبديل ================= -->
 <script>
   function openPage(pageId) {
-    // إخفاء كل الصفحات
     document.querySelectorAll('.page').forEach(page => { page.classList.remove('active'); });
-    // إظهار الصفحة المطلوبة
     document.getElementById(pageId).classList.add('active');
-    // التمرير لأعلى الصفحة
     window.scrollTo(0, 0);
   }
-
   function closePage() {
-    // إخفاء كل الصفحات وإظهار الرئيسية
     document.querySelectorAll('.page').forEach(page => { page.classList.remove('active'); });
     document.getElementById('main-page').classList.add('active');
     window.scrollTo(0, 0);
