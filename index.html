@@ -114,21 +114,31 @@
   }
   .service-card p { font-size: 0.95rem; color: #555; }
 
-  .features {
-    display: flex;
-    flex-wrap: wrap;
+  /* تنسيق معرض الصور */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
-    margin-top: 10px;
   }
-  .feature {
-    flex: 1;
-    min-width: 200px;
-    background: #eef2f9;
-    padding: 18px;
+  .gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .gallery img:hover {
+    transform: scale(1.03);
+  }
+  .gallery-item {
     text-align: center;
   }
-  .feature strong { display: block; color: #1e3c72; margin-bottom: 5px; }
+  .gallery-item p {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #1e3c72;
+  }
 
   .contact-box {
     text-align: center;
@@ -163,7 +173,7 @@
 <body>
 
 <header>
-  <h1>فني كهرباء وسباكة</h1>
+  <h1>فني كهرباء سباكة</h1>
   <p>خدمات كهرباء وسباكة احترافية — تركيب وصيانة بأعلى جودة</p>
   <div class="cta-buttons">
     <a class="btn btn-whatsapp" href="https://wa.me/966558815095?text=مرحباً،%20أريد%20الاستفسار%20عن%20خدماتكم" target="_blank">
@@ -189,30 +199,72 @@
       <p>تركيب وصيانة الأدوات الصحية، تسليك، كشف تسربات، تمديدات مياه.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon">🔧</div>
-      <h3>تركيب جميع الأعمال</h3>
-      <p>تركيب الأجهزة والأدوات الكهربائية والصحية باحترافية وأمان تام.</p>
+      <div class="service-icon">📹</div>
+      <h3>أنظمة الإنتركم</h3>
+      <p>تركيب وصيانة أجهزة الإنتركوم السمعية والمرئية باحترافية.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💡</div>
+      <h3>تراك لايت</h3>
+      <p>تركيب وتصميم إضاءة التراك لايت الحديثة لجميع الغرف والمجالس.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧲</div>
+      <h3>مجنتك (مغناطيس)</h3>
+      <p>تركيب أنظمة التعليق المغناطيسية للإنارة والستائر وغيرها.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>ثريات مودرن احترافية</h3>
+      <p>توريد وتركيب أحدث الثريات والموديلات العصرية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- قسم معرض الصور -->
+<section>
+  <h2>معرض أعمالنا</h2>
+  <div class="gallery">
+    <div class="gallery-item">
+      <!-- استبدل هذا الرابط بصورة إنتركم من أعمالك -->
+      <img src="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="أنتركوم">
+      <p>تركيب أنتركوم</p>
+    </div>
+    <div class="gallery-item">
+      <!-- استبدل هذا الرابط بصورة تراك لايت -->
+      <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="تراك لايت">
+      <p>تراك لايت مودرن</p>
+    </div>
+    <div class="gallery-item">
+      <!-- استبدل هذا الرابط بصورة مجنتك -->
+      <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مجنتك">
+      <p>إنارة مجنتك</p>
+    </div>
+    <div class="gallery-item">
+      <!-- استبدل هذا الرابط بصورة ثريا -->
+      <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ثريا مودرن">
+      <p>ثريات مودرن</p>
     </div>
   </div>
 </section>
 
 <section>
   <h2>لماذا تختارنا؟</h2>
-  <div class="features">
-    <div class="feature">
-      <strong>✅ خبرة واحترافية</strong>
+  <div class="features" style="display: flex; flex-wrap: wrap; gap: 15px;">
+    <div class="feature" style="flex: 1; min-width: 200px; background: #eef2f9; padding: 18px; border-radius: 10px; text-align: center;">
+      <strong style="display: block; color: #1e3c72; margin-bottom: 5px;">✅ خبرة واحترافية</strong>
       تنفيذ دقيق لجميع الأعمال
     </div>
-    <div class="feature">
-      <strong>⏱️ سرعة الاستجابة</strong>
+    <div class="feature" style="flex: 1; min-width: 200px; background: #eef2f9; padding: 18px; border-radius: 10px; text-align: center;">
+      <strong style="display: block; color: #1e3c72; margin-bottom: 5px;">⏱️ سرعة الاستجابة</strong>
       نصل إليك في أسرع وقت
     </div>
-    <div class="feature">
-      <strong>💰 أسعار مناسبة</strong>
+    <div class="feature" style="flex: 1; min-width: 200px; background: #eef2f9; padding: 18px; border-radius: 10px; text-align: center;">
+      <strong style="display: block; color: #1e3c72; margin-bottom: 5px;">💰 أسعار مناسبة</strong>
       جودة عالية بسعر عادل
     </div>
-    <div class="feature">
-      <strong>🛡️ ضمان العمل</strong>
+    <div class="feature" style="flex: 1; min-width: 200px; background: #eef2f9; padding: 18px; border-radius: 10px; text-align: center;">
+      <strong style="display: block; color: #1e3c72; margin-bottom: 5px;">🛡️ ضمان العمل</strong>
       رضاك هو أولويتنا
     </div>
   </div>
@@ -231,7 +283,7 @@
 </section>
 
 <footer>
-  © 2025 فني كهرباء وسباكة — جميع الحقوق محفوظة
+  © 2025 فني كهرباء سباكة — جميع الحقوق محفوظة
 </footer>
 
 <div class="sticky-bar">
