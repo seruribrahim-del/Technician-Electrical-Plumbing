@@ -5,113 +5,246 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#23364D">
-<title>فني كهرباء وسباكة | خدمات منزلية</title>
-<meta name="description" content="خدمات الكهرباء والسباكة، الإنارة الحديثة، المجنتك، التراك لايت، الإنتركم والأقفال الذكية. احجز خدمتك عبر واتساب.">
+<title>خدمات الكهرباء والسباكة</title>
+<meta name="description" content="خدمات الكهرباء والسباكة والإنارة الحديثة والأقفال الذكية والإنتركم. احجز خدمتك عبر واتساب.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--navy:#23364D;--gold:#CBB995;--gray:#777C80;--cream:#F7F6F2;--white:#fff}
+:root{
+ --navy:#23364D;
+ --gold:#CBB995;
+ --gray:#777C80;
+ --cream:#F7F6F2;
+ --white:#FFFFFF;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{margin:0;font-family:Cairo,Tahoma,Arial,sans-serif;background:var(--cream);color:#263342;line-height:1.9}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ font-family:Cairo,Tahoma,Arial,sans-serif;
+ background:var(--cream);
+ color:#293746;
+ line-height:1.9;
+}
 a{text-decoration:none;color:inherit}
 button{font:inherit;cursor:pointer}
-img{max-width:100%;display:block}
 .container{width:min(1120px,92%);margin:auto}
-header{background:var(--navy);color:white;position:sticky;top:0;z-index:100}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800}
-.logo{background:var(--gold);color:var(--navy);padding:3px 12px;border-radius:9px;font-size:25px}
-.navlinks{display:flex;align-items:center;gap:20px;font-size:14px}
+header{
+ background:var(--navy);
+ color:white;
+ position:sticky;
+ top:0;
+ z-index:100;
+}
+.nav{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:15px;
+ padding:12px 0;
+}
+.brand{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ font-weight:800;
+}
+.logo{
+ background:var(--gold);
+ color:var(--navy);
+ border-radius:9px;
+ padding:2px 12px;
+ font-size:25px;
+}
+.navlinks{display:flex;gap:18px;align-items:center;font-size:14px}
 .navlinks a:hover{color:var(--gold)}
-.btn{display:inline-block;border:0;border-radius:9px;padding:10px 18px;background:var(--gold);color:var(--navy);font-weight:800;transition:.2s}
-.btn:hover{filter:brightness(.95);transform:translateY(-1px)}
+.menu-btn{
+ display:none;
+ color:white;
+ background:none;
+ border:1px solid #ffffff66;
+ border-radius:8px;
+ padding:4px 12px;
+ font-size:23px;
+}
+.btn{
+ display:inline-block;
+ background:var(--gold);
+ color:var(--navy);
+ padding:10px 17px;
+ border:0;
+ border-radius:9px;
+ font-weight:800;
+ text-align:center;
+}
 .btn-dark{background:var(--navy);color:white}
 .btn-outline{background:transparent;border:1px solid var(--gold);color:var(--navy)}
-.menu-btn{display:none;background:none;border:1px solid #ffffff55;color:white;border-radius:8px;padding:5px 12px;font-size:22px}
-.hero{background:var(--navy);color:white;padding:42px 0 48px}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
-.hero h1{font-size:clamp(27px,4vw,43px);line-height:1.55;margin:0 0 12px}
+.hero{background:var(--navy);color:white;padding:42px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(28px,4vw,43px);line-height:1.5;margin:0 0 12px}
+.hero p{color:#e1e5e9}
 .gold{color:var(--gold)}
-.hero p{color:#e0e5e9;margin:0 0 22px}
-.hero img{width:100%;height:350px;object-fit:cover;border-radius:18px}
+.hero-img{
+ width:100%;
+ height:350px;
+ object-fit:cover;
+ border-radius:17px;
+}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
-.section{padding:48px 0}
-.heading{text-align:center;margin:0 auto 27px}
-.heading h2{font-size:clamp(23px,3vw,31px);color:var(--navy);margin:0}
+.section{padding:45px 0}
+.heading{text-align:center;margin:0 auto 26px}
+.heading h2{margin:0;color:var(--navy);font-size:clamp(23px,3vw,31px)}
 .heading p{color:var(--gray);margin:5px 0}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{background:white;border:1px solid #e6e2d9;border-radius:15px;overflow:hidden;cursor:pointer;transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 10px 28px #23364d18}
-.card img{width:100%;height:190px;object-fit:cover;background:#e5e5e5}
+.card{
+ background:white;
+ border:1px solid #e8e3da;
+ border-radius:14px;
+ overflow:hidden;
+ cursor:pointer;
+ transition:.2s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 9px 24px #23364d18}
+.card img{
+ display:block;
+ width:100%;
+ height:205px;
+ object-fit:cover;
+ background:#e8e5df;
+}
 .card-body{padding:14px 16px 18px}
-.card h3{color:var(--navy);margin:0 0 5px;font-size:18px}
+.card h3{color:var(--navy);font-size:18px;margin:0 0 4px}
 .card p{color:var(--gray);font-size:14px;margin:0 0 8px}
-.more{color:#8d764d;font-weight:800}
+.more{font-weight:800;color:#8b754f}
 .features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.feature{background:white;border-radius:13px;padding:20px;text-align:center;border:1px solid #eee9df}
-.feature .symbol{font-size:30px;color:#a68d5d}
-.feature h3{color:var(--navy);margin:4px}
-.feature p{color:var(--gray);font-size:14px;margin:0}
-.cta{background:var(--navy);color:white;border-radius:17px;padding:28px;text-align:center}
-.cta h2{margin:0}
-.cta p{color:#e0e5e9}
-footer{background:#192a3c;color:white;text-align:center;padding:25px 10px;margin-top:25px}
-footer p{margin:5px;color:#ddd;font-size:14px}
+.feature{
+ background:white;
+ border:1px solid #e9e4db;
+ border-radius:13px;
+ padding:20px;
+ text-align:center;
+}
+.feature strong{color:var(--navy);font-size:18px}
+.feature p{color:var(--gray);font-size:14px;margin:4px 0}
+.cta{
+ background:var(--navy);
+ color:white;
+ text-align:center;
+ border-radius:16px;
+ padding:28px 18px;
+}
+.cta p{color:#e1e5e9}
 .page{display:none;min-height:55vh}
 .page.active{display:block}
-.back{margin:20px 0;background:white;color:var(--navy);border:1px solid #ddd;padding:8px 14px;border-radius:9px}
+.back{
+ margin:20px 0;
+ border:1px solid #ddd;
+ background:white;
+ color:var(--navy);
+ border-radius:8px;
+ padding:8px 14px;
+}
 .detail{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
-.detail>img{width:100%;height:340px;object-fit:cover;border-radius:16px;background:#eee}
-.detail h1{font-size:clamp(26px,3.5vw,36px);color:var(--navy);line-height:1.5;margin:0 0 10px}
+.detail-cover{
+ width:100%;
+ height:360px;
+ object-fit:cover;
+ background:#e8e5df;
+ border-radius:16px;
+}
+.detail h1{color:var(--navy);font-size:clamp(27px,3vw,36px);line-height:1.5;margin:0}
 .muted{color:var(--gray)}
-.detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
 .list{padding-right:22px}
 .list li{margin:5px 0}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 30px}
-.gallery img{width:100%;height:185px;object-fit:cover;border-radius:12px;background:#eee}
-.detail-box{background:white;border:1px solid #e9e4db;padding:20px;border-radius:13px;margin-top:18px}
-.floating-whatsapp{position:fixed;bottom:16px;left:16px;background:#16894e;color:white;border-radius:35px;padding:10px 16px;z-index:200;font-weight:800;box-shadow:0 4px 18px #0002}
-.empty{padding:35px;text-align:center}
+.detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery img{
+ width:100%;
+ height:200px;
+ object-fit:cover;
+ background:#e8e5df;
+ border-radius:12px;
+}
+.detail-box{
+ background:white;
+ border:1px solid #e9e4db;
+ border-radius:13px;
+ padding:20px;
+ margin-top:25px;
+}
+footer{
+ background:#192a3c;
+ color:white;
+ text-align:center;
+ padding:24px 10px;
+ margin-top:25px;
+}
+footer p{color:#ddd;font-size:14px;margin:5px}
+.floating{
+ position:fixed;
+ bottom:16px;
+ left:16px;
+ z-index:200;
+ background:#16894e;
+ color:white;
+ padding:10px 16px;
+ border-radius:30px;
+ font-weight:800;
+ box-shadow:0 4px 16px #0002;
+}
 @media(max-width:850px){
- .navlinks{display:none;position:absolute;top:67px;right:4%;left:4%;background:var(--navy);padding:18px;border-radius:12px;flex-direction:column;align-items:stretch;gap:12px;box-shadow:0 10px 25px #0002}
+ .navlinks{
+  display:none;
+  position:absolute;
+  top:65px;
+  right:4%;
+  left:4%;
+  background:var(--navy);
+  padding:18px;
+  border-radius:12px;
+  flex-direction:column;
+  align-items:stretch;
+ }
  .navlinks.open{display:flex}
  .menu-btn{display:block}
  .nav>.btn{display:none}
  .hero-grid,.detail{grid-template-columns:1fr}
- .hero img{height:280px}
- .detail>img{height:280px}
+ .hero-img,.detail-cover{height:280px}
  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
  .features{grid-template-columns:1fr}
 }
 @media(max-width:520px){
  .grid{grid-template-columns:1fr}
- .card img{height:210px}
+ .card img{height:220px}
  .gallery{grid-template-columns:1fr 1fr}
- .gallery img{height:140px}
- .section{padding:35px 0}
+ .gallery img{height:145px}
+ .section{padding:32px 0}
  .hero{padding:30px 0}
- .hero img{height:230px}
- .detail>img{height:230px}
+ .hero-img,.detail-cover{height:230px}
  .brand{font-size:14px}
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
  <div class="container nav">
   <a class="brand" href="#home" onclick="closeMenu()">
    <span class="logo">⚡</span>
-   <span>فني كهرباء وسباكة</span>
+   <span>خدمات الكهرباء والسباكة</span>
   </a>
-  <button class="menu-btn" onclick="toggleMenu()" aria-label="فتح القائمة">☰</button>
+
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="القائمة">☰</button>
+
   <nav class="navlinks" id="navlinks">
    <a href="#home" onclick="closeMenu()">الرئيسية</a>
-   <a href="#services" onclick="goServices()">خدماتنا</a>
-   <a href="#about" onclick="goAbout()">من نحن</a>
-   <a href="#contact" onclick="goContact()">تواصل معنا</a>
+   <a href="#services" onclick="goSection('services')">خدماتنا</a>
+   <a href="#about" onclick="goSection('about')">من نحن</a>
+   <a href="#contact" onclick="goSection('contact')">تواصل معنا</a>
   </nav>
+
   <a class="btn" href="https://wa.me/966558815095" target="_blank" rel="noopener">احجز عبر واتساب</a>
  </div>
 </header>
@@ -123,13 +256,16 @@ footer p{margin:5px;color:#ddd;font-size:14px}
    <div>
     <p class="gold">حلول متكاملة لمنزلك</p>
     <h1>إضاءة تليق بمنزلك<br><span class="gold">بأيدٍ خبيرة وموثوقة</span></h1>
-    <p>خدمات الكهرباء والسباكة وتركيب الإنارة الحديثة والأقفال الذكية، بتنفيذ مرتب واهتمام بالتفاصيل.</p>
+    <p>خدمات الكهرباء والسباكة والإنارة الحديثة، مع اهتمام بالتنسيق وجودة التنفيذ.</p>
     <div class="actions">
-     <a class="btn" href="https://wa.me/966558815095?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%AE%D8%AF%D9%85%D8%A9" target="_blank" rel="noopener">احجز خدمتك الآن</a>
-     <a class="btn btn-outline" style="color:white" href="#services">استعرض الخدمات</a>
+     <a class="btn" href="https://wa.me/966558815095?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D8%AE%D8%AF%D9%85%D8%A9" target="_blank" rel="noopener">اطلب خدمتك</a>
+     <a class="btn btn-outline" style="color:white" href="#services">شاهد الخدمات</a>
     </div>
    </div>
-   <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" alt="تصميم منزل حديث وإضاءة أنيقة">
+   <img class="hero-img"
+    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+    alt="تصميم داخلي حديث وإضاءة منزلية"
+    onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80'">
   </div>
  </div>
 
@@ -137,7 +273,7 @@ footer p{margin:5px;color:#ddd;font-size:14px}
   <div class="container">
    <div class="heading">
     <h2>خدماتنا</h2>
-    <p>اضغط على أي خدمة لمشاهدة التفاصيل والصور وطلب الحجز.</p>
+    <p>اضغط على الخدمة لعرض الصور والتفاصيل وطلب الحجز.</p>
    </div>
    <div class="grid" id="serviceGrid"></div>
   </div>
@@ -147,12 +283,12 @@ footer p{margin:5px;color:#ddd;font-size:14px}
   <div class="container">
    <div class="heading">
     <h2>لماذا تختار خدماتنا؟</h2>
-    <p>اهتمام بالتفاصيل من بداية العمل وحتى الانتهاء.</p>
+    <p>اهتمام بالتفاصيل وحلول تناسب احتياجات منزلك.</p>
    </div>
    <div class="features">
-    <div class="feature"><div class="symbol">✦</div><h3>تنفيذ مرتب</h3><p>اهتمام بالتنسيق والمظهر النهائي للأعمال.</p></div>
-    <div class="feature"><div class="symbol">⚡</div><h3>حلول حديثة</h3><p>خيارات إنارة وتجهيزات تناسب المنازل الحديثة.</p></div>
-    <div class="feature"><div class="symbol">✓</div><h3>حجز سهل</h3><p>تواصل معنا عبر واتساب لتوضيح طلبك.</p></div>
+    <div class="feature"><strong>تنفيذ مرتب</strong><p>تنسيق واهتمام بالمظهر النهائي.</p></div>
+    <div class="feature"><strong>حلول حديثة</strong><p>خيارات إنارة وتجهيزات عصرية.</p></div>
+    <div class="feature"><strong>حجز سهل</strong><p>أرسل تفاصيل طلبك عبر واتساب.</p></div>
    </div>
   </div>
  </section>
@@ -160,9 +296,9 @@ footer p{margin:5px;color:#ddd;font-size:14px}
  <section class="section" id="contact">
   <div class="container">
    <div class="cta">
-    <h2>هل تحتاج إلى فني كهرباء أو سباكة؟</h2>
-    <p>أرسل لنا تفاصيل الخدمة المطلوبة عبر واتساب وسنتواصل معك.</p>
-    <a class="btn" href="https://wa.me/966558815095?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+    <h2>تحتاج إلى فني كهرباء أو سباكة؟</h2>
+    <p>تواصل معنا عبر واتساب وأرسل تفاصيل الخدمة المطلوبة.</p>
+    <a class="btn" href="https://wa.me/966558815095" target="_blank" rel="noopener">تواصل معنا الآن</a>
    </div>
   </div>
  </section>
@@ -170,30 +306,32 @@ footer p{margin:5px;color:#ddd;font-size:14px}
 
 <section id="servicePage" class="page">
  <div class="container">
-  <button class="back" onclick="goHome()">→ العودة إلى جميع الخدمات</button>
+  <button class="back" onclick="goHome()">← العودة إلى الخدمات</button>
+
   <div class="detail">
    <div>
     <p class="gold" id="crumbName">خدماتنا</p>
     <h1 id="detailTitle"></h1>
     <p class="muted" id="detailIntro"></p>
-    <h3>ماذا تشمل الخدمة؟</h3>
+    <h3>تفاصيل الخدمة</h3>
     <ul class="list" id="detailList"></ul>
     <div class="detail-actions">
-     <a class="btn" id="detailBooking" href="#" target="_blank" rel="noopener">احجز هذه الخدمة عبر واتساب</a>
+     <a class="btn" id="detailBooking" href="#" target="_blank" rel="noopener">احجز عبر واتساب</a>
      <button class="btn btn-outline" onclick="goHome()">خدمات أخرى</button>
     </div>
    </div>
-   <img id="detailCover" src="" alt="">
+   <img class="detail-cover" id="detailCover" src="" alt="">
   </div>
+
   <section class="section">
    <div class="heading">
     <h2 id="galleryTitle">صور الخدمة</h2>
-    <p>أمثلة وصور توضيحية مرتبطة بالخدمة.</p>
+    <p>صور توضيحية مرتبطة بالخدمة.</p>
    </div>
    <div class="gallery" id="galleryGrid"></div>
    <div class="detail-box">
-    <h3>طلب الخدمة</h3>
-    <p id="bookingText">راسلنا عبر واتساب وحدد الخدمة والموقع والتفاصيل المطلوبة.</p>
+    <h3>هل تريد طلب هذه الخدمة؟</h3>
+    <p id="bookingText">راسلنا عبر واتساب لمعرفة التفاصيل.</p>
     <a class="btn" id="bottomBooking" href="#" target="_blank" rel="noopener">ابدأ الحجز الآن</a>
    </div>
   </section>
@@ -202,156 +340,154 @@ footer p{margin:5px;color:#ddd;font-size:14px}
 </main>
 
 <footer>
- <div class="container">
-  <div class="brand" style="justify-content:center"><span class="logo">⚡</span><span>فني كهرباء وسباكة</span></div>
-  <p>خدمات الكهرباء والسباكة والإنارة الحديثة.</p>
-  <p>للتواصل والحجز: <a href="https://wa.me/966558815095" target="_blank" rel="noopener" class="gold">0558815095</a></p>
-  <p>جميع الحقوق محفوظة © <span id="year"></span></p>
+ <div class="brand" style="justify-content:center">
+  <span class="logo">⚡</span>
+  <span>خدمات الكهرباء والسباكة</span>
  </div>
+ <p>للتواصل والحجز: <a class="gold" href="https://wa.me/966558815095" target="_blank" rel="noopener">0558815095</a></p>
+ <p>جميع الحقوق محفوظة © <span id="year"></span></p>
 </footer>
 
-<a class="floating-whatsapp" href="https://wa.me/966558815095" target="_blank" rel="noopener">◉ واتساب</a>
+<a class="floating" href="https://wa.me/966558815095" target="_blank" rel="noopener">واتساب ◉</a>
 
 <script>
-const phone = "966558815095";
+const PHONE = "966558815095";
+const FALLBACK = "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80";
 
 const services = [
- {
-  id:"hidden-lighting",
-  title:"الإضاءة المخفية",
-  description:"تنفيذ الإضاءة المخفية والخطوط الضوئية بتنسيق أنيق يناسب ديكور منزلك.",
-  cover:"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["تركيب الإضاءة المخفية في الأسقف","تنفيذ خطوط LED حسب التصميم","توزيع الإضاءة بما يناسب المكان","تعديل وتطوير الإضاءة القائمة"]
- },
- {
-  id:"kitchen-lighting",
-  title:"إضاءة المطابخ والخزائن",
-  description:"إضاءة عملية وجمالية للمطابخ والخزائن والأرفف، بخطوط ضوئية مرتبة.",
-  cover:"https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["إضاءة أسفل خزائن المطبخ","إضاءة داخل الخزائن والأرفف","تركيب شرائط LED","توزيع الإضاءة حسب الاستخدام"]
- },
- {
-  id:"magnetic-track",
-  title:"المجنتك والتراك لايت",
-  description:"تركيب أنظمة الإنارة الحديثة وتوزيع المسارات بما يناسب تصميم المكان.",
-  cover:"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["تركيب المسار المغناطيسي","تركيب التراك لايت","تحديد مواقع الإنارة","تجهيز التمديدات اللازمة"]
- },
- {
-  id:"chandeliers",
-  title:"الثريات والإنارة الديكورية",
-  description:"تركيب الثريات ووحدات الإنارة الداخلية بما يتناسب مع المساحة والديكور.",
-  cover:"https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["تركيب الثريات","تركيب وحدات الإنارة الداخلية","استبدال وحدات الإنارة","التأكد من التوصيلات والتثبيت"]
- },
- {
-  id:"intercom",
-  title:"الإنتركم",
-  description:"تركيب وتجهيز أجهزة الإنتركم للمنازل والمداخل، حسب نوع النظام واحتياج الموقع.",
-  cover:"https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["تركيب أجهزة الإنتركم","تجهيز التوصيلات","فحص التشغيل","استبدال الأجهزة عند الحاجة"]
- },
- {
-  id:"smart-locks",
-  title:"الأقفال الذكية",
-  description:"تركيب الأقفال الذكية للأبواب وتوضيح طريقة الاستخدام وفق مواصفات الجهاز.",
-  cover:"https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["تركيب القفل الذكي","فحص توافق القفل مع الباب","إعداد طرق الفتح المدعومة","شرح الاستخدام الأساسي"]
- },
- {
-  id:"electrical-installation",
-  title:"تأسيس وتمديدات الكهرباء",
-  description:"تنفيذ التمديدات الكهربائية وتجهيز نقاط الكهرباء والإنارة للمنازل والمشاريع.",
-  cover:"https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["تمديد الأسلاك الكهربائية","تأسيس نقاط الإنارة والأفياش","توزيع نقاط الكهرباء","تجهيز التمديدات للأجهزة"]
- },
- {
-  id:"electrical-repair",
-  title:"كشف الأعطال الكهربائية",
-  description:"فحص المشكلات الكهربائية وتحديد سبب العطل والعمل على إصلاحه بعد المعاينة.",
-  cover:"https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["فحص انقطاع الكهرباء","تحديد أسباب الأعطال","فحص المفاتيح والأفياش","فحص التوصيلات الكهربائية"]
- },
- {
-  id:"plumbing",
-  title:"أعمال السباكة",
-  description:"تنفيذ أعمال السباكة المنزلية وتركيب الأدوات الصحية وصيانة التمديدات.",
-  cover:"https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1629079447777-1e605162dc8d?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["تركيب الأدوات الصحية","صيانة الحنفيات والتوصيلات","إصلاح تسربات المياه الظاهرة","صيانة تمديدات المياه"]
- },
- {
-  id:"water-leaks",
-  title:"كشف تسربات المياه",
-  description:"معاينة مواقع التسربات الظاهرة وتحديد المشكلة وتقديم الحل المناسب بعد الفحص.",
-  cover:"https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1000&q=85",
-  images:[
-   "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1629079447777-1e605162dc8d?auto=format&fit=crop&w=700&q=80",
-   "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80"
-  ],
-  items:["معاينة آثار تسرب المياه","فحص التوصيلات الظاهرة","تحديد مصدر المشكلة قدر الإمكان","إصلاح التسرب بعد تحديده"]
- }
+{
+ id:"hidden",
+ title:"الإضاءة المخفية",
+ desc:"تنفيذ الإضاءة المخفية وخطوط LED في الأسقف والجدران بما يناسب التصميم الداخلي.",
+ images:[
+ "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب الإضاءة المخفية في الأسقف","تنفيذ خطوط LED حسب التصميم","توزيع الإضاءة بصورة متناسقة","تعديل وتطوير الإضاءة القائمة"]
+},
+{
+ id:"kitchen",
+ title:"إضاءة المطابخ",
+ desc:"إضاءة عملية وجمالية للمطابخ، مع التركيز على الإنارة أسفل الخزائن العلوية.",
+ images:[
+ "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب شريط LED أسفل خزائن المطبخ","إضاءة أسطح العمل","تمديد وتجهيز توصيلات الإنارة","تركيب إضاءة حسب تصميم المطبخ"]
+},
+{
+ id:"wardrobes",
+ title:"إضاءة الخزائن والأرفف",
+ desc:"تركيب خطوط LED وإضاءة داخلية للخزائن والأرفف والمطابخ والديكورات الخشبية.",
+ images:[
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب شرائط LED داخل الخزائن","إضاءة الأرفف والديكورات الخشبية","تنفيذ خطوط ضوئية مستقيمة","إخفاء التوصيلات قدر الإمكان"]
+},
+{
+ id:"magnetic",
+ title:"المجنتك والتراك لايت",
+ desc:"تركيب مسارات الإنارة المغناطيسية والتراك لايت وتوزيع وحدات الإنارة حسب المكان.",
+ images:[
+ "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب المسار المغناطيسي","تركيب التراك لايت","تحديد أماكن وحدات الإنارة","تجهيز التمديدات اللازمة"]
+},
+{
+ id:"profile",
+ title:"إضاءة البروفايل",
+ desc:"تنفيذ خطوط إضاءة البروفايل في الأسقف والجدران والديكورات بطريقة مرتبة.",
+ images:[
+ "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب بروفايل الإنارة","تجهيز شرائط LED","تنفيذ الخطوط حسب المقاسات","فحص الإضاءة بعد التركيب"]
+},
+{
+ id:"chandeliers",
+ title:"الثريات",
+ desc:"تركيب الثريات ووحدات الإنارة الديكورية مع التأكد من التثبيت والتوصيلات.",
+ images:[
+ "https://images.unsplash.com/photo-1543198126-a8ad8e47fb22?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب الثريات","تركيب وحدات الإنارة الداخلية","استبدال وحدات الإنارة","فحص التوصيلات والتثبيت"]
+},
+{
+ id:"intercom",
+ title:"الإنتركم",
+ desc:"تركيب أجهزة الإنتركم والشاشات الداخلية ووحدات الاتصال للمنازل والمداخل.",
+ images:[
+ "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1558008258-3256797b43f3?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب أجهزة الإنتركم","توصيل الشاشة والوحدة الخارجية","فحص الاتصال والتشغيل","استبدال الأجهزة عند الحاجة"]
+},
+{
+ id:"smartlock",
+ title:"الأقفال الذكية",
+ desc:"تركيب الأقفال الذكية للأبواب وفحص التوافق وشرح طريقة الاستخدام الأساسية.",
+ images:[
+ "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب القفل الذكي","فحص توافق القفل مع الباب","إعداد وسائل الفتح المدعومة","شرح الاستخدام الأساسي"]
+},
+{
+ id:"electricity",
+ title:"الكهرباء والتأسيس والصيانة",
+ desc:"خدمات التمديدات الكهربائية وتأسيس نقاط الكهرباء والإنارة وفحص الأعطال.",
+ images:[
+ "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تأسيس وتمديدات الكهرباء","تجهيز نقاط الإنارة والأفياش","فحص الأعطال الكهربائية","صيانة التوصيلات والمفاتيح"]
+},
+{
+ id:"plumbing",
+ title:"السباكة وكشف التسربات",
+ desc:"أعمال السباكة المنزلية وصيانة التمديدات ومعاينة التسربات وإصلاحها.",
+ images:[
+ "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1629079447777-1e605162dc8d?auto=format&fit=crop&w=900&q=85",
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+ ],
+ items:["تركيب وصيانة الأدوات الصحية","صيانة الحنفيات والتوصيلات","معاينة تسربات المياه","إصلاح التسربات بعد تحديد مصدرها"]
+}
 ];
 
-function waLink(title){
- const message="السلام عليكم، أرغب في حجز خدمة: "+title+". فضلاً التواصل معي وتوضيح التفاصيل.";
- return "https://wa.me/"+phone+"?text="+encodeURIComponent(message);
+function imageTag(src,alt,cls=""){
+ return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK}'">`;
+}
+
+function bookingLink(title){
+ const msg="السلام عليكم، أرغب في طلب خدمة: "+title+". أرجو التواصل معي لتحديد التفاصيل.";
+ return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg);
 }
 
 function renderServices(){
  const grid=document.getElementById("serviceGrid");
  grid.innerHTML=services.map(s=>`
-  <article class="card" tabindex="0" role="link" aria-label="عرض خدمة ${s.title}" onclick="openService('${s.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openService('${s.id}')}">
-   <img src="${s.cover}" alt="${s.title}" loading="lazy">
+  <article class="card" tabindex="0" role="link"
+   aria-label="تفاصيل ${s.title}"
+   onclick="openService('${s.id}')"
+   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openService('${s.id}')}">
+   ${imageTag(s.images[0],s.title)}
    <div class="card-body">
     <h3>${s.title}</h3>
-    <p>${s.description}</p>
-    <span class="more">عرض تفاصيل الخدمة ←</span>
+    <p>${s.desc}</p>
+    <span class="more">عرض الصور والتفاصيل ←</span>
    </div>
   </article>
  `).join("");
@@ -365,28 +501,41 @@ function openService(id){
 function renderRoute(){
  const hash=decodeURIComponent(location.hash||"#home");
  const home=document.getElementById("homePage");
- const page=document.getElementById("servicePage");
+ const detail=document.getElementById("servicePage");
+
  if(hash.startsWith("#service/")){
-  const id=hash.substring(9);
-  const s=services.find(item=>item.id===id);
+  const id=hash.slice("#service/".length);
+  const s=services.find(x=>x.id===id);
   if(!s){location.hash="#home";return}
+
   home.classList.remove("active");
-  page.classList.add("active");
+  detail.classList.add("active");
+
   document.getElementById("crumbName").textContent="خدماتنا / "+s.title;
   document.getElementById("detailTitle").textContent=s.title;
-  document.getElementById("detailIntro").textContent=s.description;
-  document.getElementById("detailCover").src=s.cover;
-  document.getElementById("detailCover").alt=s.title;
-  document.getElementById("detailList").innerHTML=s.items.map(x=>"<li>"+x+"</li>").join("");
+  document.getElementById("detailIntro").textContent=s.desc;
+
+  const cover=document.getElementById("detailCover");
+  cover.src=s.images[0];
+  cover.alt=s.title;
+  cover.onerror=function(){
+   this.onerror=null;
+   this.src=FALLBACK;
+  };
+
+  document.getElementById("detailList").innerHTML=
+   s.items.map(item=>"<li>"+item+"</li>").join("");
+
   document.getElementById("galleryTitle").textContent="صور "+s.title;
-  document.getElementById("galleryGrid").innerHTML=s.images.map((img,i)=>`
-   <img src="${img}" alt="${s.title} - صورة ${i+1}" loading="lazy">
-  `).join("");
-  document.getElementById("detailBooking").href=waLink(s.title);
-  document.getElementById("bottomBooking").href=waLink(s.title);
-  document.getElementById("bookingText").textContent="لحجز خدمة "+s.title+"، أرسل لنا عبر واتساب وصف طلبك وموقعك، ويمكنك إرفاق صور للمكان إن توفرت.";
+  document.getElementById("galleryGrid").innerHTML=
+   s.images.map((src,i)=>imageTag(src,s.title+" - صورة "+(i+1))).join("");
+
+  document.getElementById("detailBooking").href=bookingLink(s.title);
+  document.getElementById("bottomBooking").href=bookingLink(s.title);
+  document.getElementById("bookingText").textContent=
+   "لطلب خدمة "+s.title+"، أرسل لنا رسالة عبر واتساب واشرح طلبك وموقع العمل.";
  }else{
-  page.classList.remove("active");
+  detail.classList.remove("active");
   home.classList.add("active");
  }
  window.scrollTo({top:0,behavior:"smooth"});
@@ -397,22 +546,13 @@ function goHome(){
  closeMenu();
 }
 
-function goServices(){
+function goSection(id){
  closeMenu();
- if(location.hash!=="#home"){location.hash="#home"}
- setTimeout(()=>document.getElementById("services").scrollIntoView({behavior:"smooth"}),50);
-}
-
-function goAbout(){
- closeMenu();
- if(location.hash!=="#home"){location.hash="#home"}
- setTimeout(()=>document.getElementById("about").scrollIntoView({behavior:"smooth"}),50);
-}
-
-function goContact(){
- closeMenu();
- if(location.hash!=="#home"){location.hash="#home"}
- setTimeout(()=>document.getElementById("contact").scrollIntoView({behavior:"smooth"}),50);
+ if(location.hash!=="#home") location.hash="#home";
+ setTimeout(()=>{
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:"smooth"});
+ },100);
 }
 
 function toggleMenu(){
